@@ -1,0 +1,43 @@
+# 说明：npm 打包时 package.json 的 `files` 字段优先于 .npmignore。
+# 本文件只作兜底，防止将来调整 `files` 时把开发、发布与市场资料带进 tarball。
+#
+# 当前 `files` 明确包含：index.js、lib/*.js、cordis.patch.yml、locale/*.json、
+# icon.svg、LICENSE、README.md、README.en.md、SECURITY.md、PRIVACY.md、
+# CHANGELOG.md、screenshots.json、docs/*.png、vendor/README.md、
+# vendor/checksums.txt、vendor/LICENSE-lark-cli.txt。
+# 其中 README.en.md、SECURITY.md、PRIVACY.md、CHANGELOG.md、screenshots.json
+# 与 docs/*.png 是刻意保留的发布资料，不要在这里排除。
+
+# 开发与测试
+tests/
+coverage/
+node_modules/
+*.test.mjs
+test-results/
+
+# CI、仓库元数据与本发布指南
+.github/
+.gitignore
+.npmignore
+PUBLISHING.md
+market/
+
+# 运行时下载的二进制（本地存在也不打包）
+vendor/lark-cli.exe
+vendor/lark-cli
+vendor/*.zip
+
+# 日志、临时文件与操作系统 / 编辑器产物
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tgz
+*.tmp
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp

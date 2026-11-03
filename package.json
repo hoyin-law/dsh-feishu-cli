@@ -1,0 +1,73 @@
+{
+  "name": "dsh-feishu-cli",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "飞书官方 CLI 的 DeepSeek Harness 插件：Web UI 一键登录、命令控制台、Agent 工具，覆盖 18 大业务域、200+ 命令与全量 OpenAPI。",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "feishu",
+    "lark",
+    "lark-cli",
+    "飞书"
+  ],
+  "license": "MIT",
+  "author": "hoyin-law",
+  "homepage": "https://github.com/hoyin-law/dsh-feishu-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoyin-law/dsh-feishu-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hoyin-law/dsh-feishu-cli/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib/cli.js",
+    "lib/install.js",
+    "lib/api.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "vendor/README.md",
+    "vendor/checksums.txt",
+    "vendor/LICENSE-lark-cli.txt",
+    "README.md",
+    "README.en.md",
+    "SECURITY.md",
+    "PRIVACY.md",
+    "CHANGELOG.md",
+    "screenshots.json",
+    "docs/*.png",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}

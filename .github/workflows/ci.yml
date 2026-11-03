@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Syntax & tests (Node 22)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Syntax check
+        run: |
+          set -euo pipefail
+          for f in index.js lib/cli.js lib/install.js lib/api.js lib/client.js; do
+            if [ -f "$f" ]; then
+              echo "node --check $f"
+              node --check "$f"
+            else
+              echo "skip (not present yet): $f"
+            fi
+          done
+
+      - name: Unit tests
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          files=(tests/*.test.mjs)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No test files found in tests/*.test.mjs — skipping."
+          else
+            node --test "${files[@]}"
+          fi

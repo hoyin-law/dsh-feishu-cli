@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Feishu CLI",
+    "description": "Sign in to Feishu from DSH and let the agent handle messaging, docs, Base, calendar, mail and tasks through the official Feishu CLI, or call any of 2000+ OpenAPI endpoints."
+  }
+}

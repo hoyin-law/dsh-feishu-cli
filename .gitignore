@@ -1,0 +1,31 @@
+# 依赖与构建产物
+node_modules/
+coverage/
+
+# 运行时下载的官方 CLI（约 50MB，不进仓库）
+vendor/lark-cli.exe
+vendor/lark-cli
+vendor/*.zip
+
+# 日志与临时文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tgz
+*.tmp
+
+# 操作系统 / 编辑器
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# 本地环境变量与测试产物
+.env
+.env.*
+!.env.example
+test-results/
