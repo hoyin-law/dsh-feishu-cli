@@ -89,8 +89,8 @@ DSH Desktop 用 `--profile desktop`。安装后重启 DSH，确认：
 不发 npm 也能通过 GitHub 安装；npm 包的好处是预构建安装，跳过源码构建授权步骤。
 
 ```bash
-npm login
-npm publish --access public
+npm login --registry=https://registry.npmjs.org
+npm publish --registry=https://registry.npmjs.org --access public
 ```
 
 验证：
