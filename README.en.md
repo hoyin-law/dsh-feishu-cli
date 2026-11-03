@@ -52,6 +52,12 @@ If the package is published to npm, you can install it by name:
 dsh plugin --profile web add dsh-feishu-cli
 ```
 
+To skip installing from source, download `dsh-feishu-cli.tgz` from the [v1.0.0 Release](https://github.com/hoyin-law/dsh-feishu-cli/releases/tag/v1.0.0) and install it locally:
+
+```bash
+dsh plugin --profile web add ./dsh-feishu-cli.tgz
+```
+
 Restart DSH after installing; a Feishu icon appears in the sidebar. To uninstall:
 
 ```bash
