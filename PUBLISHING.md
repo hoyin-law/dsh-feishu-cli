@@ -5,7 +5,7 @@
 ## 0. 发布前检查
 
 ```bash
-# 语法检查（lib/install.js 存在后也应加入）
+# 语法检查
 for f in index.js lib/cli.js lib/install.js lib/api.js lib/client.js; do
   [ -f "$f" ] && node --check "$f"
 done
