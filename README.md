@@ -52,6 +52,12 @@ dsh plugin --profile desktop add github:hoyin-law/dsh-feishu-cli
 dsh plugin --profile web add dsh-feishu-cli
 ```
 
+不想从源码安装时，可以下载 [v1.0.0 Release](https://github.com/hoyin-law/dsh-feishu-cli/releases/tag/v1.0.0) 里的 `dsh-feishu-cli.tgz`，然后本地安装：
+
+```bash
+dsh plugin --profile web add ./dsh-feishu-cli.tgz
+```
+
 安装完成后重启 DSH，侧边栏会出现「飞书」图标。卸载：
 
 ```bash
